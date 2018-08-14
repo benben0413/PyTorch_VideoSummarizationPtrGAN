@@ -21,8 +21,8 @@ pip install -U torch torchvision opencv-pyhton tqdm
 ## Usage
 
 ### IPynb
-+ [Preprocessing.ipynb](): Extract visual feature (**2048** dimensions) from ResNet-101
-+ [Main.ipynb](): Include whole proess of model, traing, and testing
++ [Preprocessing.ipynb](https://github.com/tsujuifu/PyTorch_VideoSummarizationPtrGAN/blob/master/Preprocessing.ipynb): Extract visual feature (**2048** dimensions) from ResNet-101
++ [Main.ipynb](https://github.com/tsujuifu/PyTorch_VideoSummarizationPtrGAN/blob/master/Main.ipynb): Include whole proess of model, traing, and testing
 
 ### Source
 + [Src/main.py](https://github.com/tsujuifu/PyTorch_VideoSummarizationPtrGAN/blob/master/Src/main.py): Run for train/test

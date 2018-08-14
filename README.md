@@ -6,6 +6,8 @@ An implementation of Attend, Cut, and Judge
 ## Overview
 We consider video summarization as a seq-seq problem, where input is image sequence and output is summariation. We use a Ptr-Net as generate to summarize input video. Different from paper applying 3D convolutional classifier as discirminator, here we **first extract visual features and concatenate them**, followed by **1D convolution classification**. The result is very similar but easier to train. This repo is for Youtube dataset and **Keyframe selection** summarization type.
 
+<img src='https://i.imgur.com/S02r9hP.png' width='75%' />
+
 ## Requirements
 + Python3
 + PyTorch
@@ -25,7 +27,7 @@ pip install -U torch torchvision opencv-pyhton tqdm
 ### Source
 + [Src/main.py](): Run for train/test
 + [Src/model.py](): Return generator and discriminator models
-+ [Src/train.py](): Train generator (**teacher forcing**, **policy gradient**) and discriminator (**binary classification**)
++ [Src/train.py](): Train generator (**teacher forcing**, **policy gradient**) and discriminator
 + [Src/test.py](): Evaluate generator by **F1** score
 + [Src/tools.py](): Some useful functions
 

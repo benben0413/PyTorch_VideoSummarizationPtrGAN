@@ -4,7 +4,7 @@ An implementation of Attend, Cut, and Judge
 <img src='https://i.imgur.com/OuRdP91.png' width='80%' />
 
 ## Overview
-We consider video summarization as a seq-seq problem, where input is image sequence and output is summariation. We use a Ptr-Net as generate to summarize input video. Different from paper applying 3D convolutional classifier as discirminator, here we **first extract visual features and concatenate them**, followed by **1D convolution classification**. The result is very similar but easier to train. This repo is for Youtube dataset and **Keyframe selection** summarization type.
+We consider video summarization as a seq-seq problem, where input is image sequence and output is summariation. We use a Ptr-Net as generate to summarize input video. Different from paper applying 3D convolutional classifier as discirminator, here we **first extract visual features and concatenate them**, followed by **1D convolution classification**. The result is very similar but easier to train. This repo is for **Youtube** dataset and **Keyframe selection** summarization type.
 
 <img src='https://i.imgur.com/S02r9hP.png' width='75%' />
 
@@ -25,11 +25,11 @@ pip install -U torch torchvision opencv-pyhton tqdm
 + [Main.ipynb](): Include whole proess of model, traing, and testing
 
 ### Source
-+ [Src/main.py](): Run for train/test
-+ [Src/model.py](): Return generator and discriminator models
-+ [Src/train.py](): Train generator (**teacher forcing**, **policy gradient**) and discriminator
-+ [Src/test.py](): Evaluate generator by **F1** score
-+ [Src/tools.py](): Some useful functions
++ [Src/main.py](https://github.com/tsujuifu/PyTorch_VideoSummarizationPtrGAN/blob/master/Src/main.py): Run for train/test
++ [Src/model.py](https://github.com/tsujuifu/PyTorch_VideoSummarizationPtrGAN/blob/master/Src/model.py): Return generator and discriminator models
++ [Src/train.py](https://github.com/tsujuifu/PyTorch_VideoSummarizationPtrGAN/blob/master/Src/train.py): Train generator (**teacher forcing**, **policy gradient**) and discriminator
++ [Src/test.py](https://github.com/tsujuifu/PyTorch_VideoSummarizationPtrGAN/blob/master/Src/test.py): Evaluate generator by **F1** score
++ [Src/tools.py](https://github.com/tsujuifu/PyTorch_VideoSummarizationPtrGAN/blob/master/Src/tools.py): Some useful functions
 
 ## Resources
 + [Here](https://goo.gl/xyzFuL) contains preprocessed Youtube dataset and pre-trained models.

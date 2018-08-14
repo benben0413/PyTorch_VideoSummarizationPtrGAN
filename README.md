@@ -17,12 +17,17 @@ pip install -U torch torchvision opencv-pyhton tqdm
 ```
 
 ## Usage
+
+### IPynb
 + [Preprocessing.ipynb](): Extract visual feature (**2048** dimensions) from ResNet-101
 + [Main.ipynb](): Include whole proess of model, traing, and testing
+
+### Source
++ [Src/main.py](): Run for train/test
 + [Src/model.py](): Return generator and discriminator models
 + [Src/train.py](): Train generator (**teacher forcing**, **policy gradient**) and discriminator (**binary classification**)
 + [Src/test.py](): Evaluate generator by **F1** score
-+ [Src/main.py](): Run for train/test
++ [Src/tools.py](): Some useful functions
 
 ## Resources
 + [Here](https://goo.gl/xyzFuL) contains preprocessed Youtube dataset and pre-trained models.

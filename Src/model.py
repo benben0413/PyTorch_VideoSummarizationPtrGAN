@@ -1,6 +1,7 @@
 import torch as T
 import torch.nn as nn
 from torch.autograd import Variable as V
+import torch.nn.functional as F
 
 import numpy as np
 
@@ -33,7 +34,7 @@ class vsumG(nn.Module):
             tmp = []
             for j in range(enc_out.shape[0]):
                 tmp.append(self.v(self.tanh(self.dec_w(h)+self.enc_w(enc_out[j, :, :]))))
-            tmp = T.cat(tmp, dim=1)
+            tmp = F.log_softmax(T.cat(tmp, dim=1), dim=1)
             dec_out.append(tmp)
             
             if is_train==True:
@@ -67,8 +68,8 @@ class vsumG(nn.Module):
                 tmp = []
                 for j in range(enc_out.shape[0]):
                     tmp.append(self.v(self.tanh(self.dec_w(h)+self.enc_w(enc_out[j, :, :]))))
-                tmp = T.cat(tmp, dim=1)
-                idxs = T.multinomial(T.exp(tmp), 1)
+                tmp = F.log_softmax(T.cat(tmp, dim=1), dim=1)
+                idxs = T.multinomial(T.exp(tmp), dim=1)
                 
                 inp = T.cat([feats[idxs[k][0], k, :].view(1, -1) for k in range(feats.shape[1])], dim=0)
                 
